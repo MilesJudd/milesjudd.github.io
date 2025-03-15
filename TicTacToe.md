@@ -7,4 +7,4 @@ layout: default
 
 This is the about page of my personal website.
 
-[Back to Home]({{ site.baseurl }}/)
+[Back to Home]({{ site.baseurl }}/)  
