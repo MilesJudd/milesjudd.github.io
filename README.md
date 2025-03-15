@@ -1,6 +1,6 @@
 # DPhil candidate in Engineering Science
 
-Beat me at Tic Tac Toe: https://username.github.io/tic-tac-toe
+[Play Tic-Tac-Toe]({{ site.baseurl }}/TicTacToe)
 
 ### Publications
 
