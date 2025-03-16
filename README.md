@@ -4,9 +4,7 @@ I am a Doctor of Philosophy (DPhil) candidate in Engineering Science at the Univ
 
 Technical Skills: MATLAB, Python, CAD, FEM (DIANA FEA), DIC
 
-[Play Tic-Tac-Toe]({{ site.baseurl }}/TicTacToe)
-
-[Play Tic-Tac-Toe against AI]({{ site.baseurl }}/tic-tac-toe2)
+[Play Tic-Tac-Toe with your friends]({{ site.baseurl }}/TicTacToe) or try to [beat me in Tic-Tac-Toe]({{ site.baseurl }}/tic-tac-toe2) - or more prcisely, a decision tree trained on my previous games!
 
 ### Publications
 
