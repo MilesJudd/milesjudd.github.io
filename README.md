@@ -4,6 +4,8 @@ Hi! My name is Miles.
 
 [Play Tic-Tac-Toe]({{ site.baseurl }}/TicTacToe)
 
+[Play Tic-Tac-Toe against AI]({{ site.baseurl }}/tic-tac-toe2)
+
 ### Publications
 
 - **Judd, M. R. W., Sangirardi, M., & Acikgoz, S. (2025).** The influence of Digital Image Correlation parameters on the accuracy of elastic property identification of brick and mortar from compression stack tests. *18th International Brick and Block Masonry Conference (IB2MaC 2024)*. *Lecture Notes in Civil Engineering, vol 614*. Springer, Cham. [https://doi.org/10.1007/978-3-031-73310-9_80](https://doi.org/10.1007/978-3-031-73310-9_80)
