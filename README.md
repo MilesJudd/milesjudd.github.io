@@ -23,9 +23,9 @@ This project was created to explore the capabilities of different machine learni
 [Play Tic-Tac-Toe with your friends]({{ site.baseurl }}/TicTacToe) or try to [beat me in Tic-Tac-Toe]({{ site.baseurl }}/tic-tac-toe2) - or more prcisely, a decision tree trained on my previous games!
 
 ### Projects
-- **MINT: Masonry in-situ testing and material identification (EPSRC):**
-- **High-speed camera based operational modal analysis:**
-- **AI at BMW MINI Plant Oxford in collaboration with the Oxford SDG Impact Lab:**
+- **MINT: Masonry in-situ testing and material identification:** Funded by the Engineering and Physical Sciences Research Council (EPSRC), the [MINT project](https://testgow.epsrc.ukri.org/NGBOViewGrant.aspx?GrantRef=EP/V048082/1) aims to estimate mechanical properties of existing masonry assets using Digital Image Correlation techniques (DIC) and the Virtual Fields Method (VFM).
+- **High-speed camera based operational modal analysis:** This work compares camera-based Operational Modal Analysis (OMA) with conventional EMA using piezoelectric sensors. A Python toolbox, pyOMA, is developed, implementing the Frequency Domain Decomposition (FDD) method. Validated on a reference structure, the methods are tested on a custom setup, focusing on the impact of sensor weight on modal properties.
+- [**AI at BMW MINI Plant Oxford in collaboration with the Oxford SDG Impact Lab**](https://www.sdglab.uk/case-study/student-story-miles-judd)**:** Together with fellows from the Oxford SDG Impact Lab, we collaborated with the BMW MINI Plant Oxford to create a roadmap for deploying AI tools in manufacturing. This initiative aimed to enhance efficiency and sustainability, aligning with the lab's mission to drive impactful, sustainable development. Learn more about the Oxford SDG Impact Lab [here](https://www.sdglab.uk/).
 
 
 ### Publications
