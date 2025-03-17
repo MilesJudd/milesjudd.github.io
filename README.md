@@ -4,6 +4,22 @@ I am a Doctor of Philosophy (DPhil) candidate in Engineering Science at the Univ
 
 Technical Skills: MATLAB, Python, CAD, FEM (DIANA FEA), DIC
 
+### Tic Tac Toe AI Player
+Welcome to my Tic Tac Toe AI Player project! This is a fun and interactive implementation of the classic game, where you can play against AI opponents trained using different machine learning models. The AI players have been trained on a dataset of my previous Tic Tac Toe games, ensuring they mimic my playing style and designed to challenge you at various difficulty levels.
+
+Choose to play against one of three AI models:
+- [**Decision Tree**]({{ site.baseurl }}/tic-tac-toe2): A simple yet effective AI based on decision tree logic. Fast and efficient, but may struggle with complex board states.
+- **Random Forest**: A more advanced AI that uses an ensemble of decision trees for better decision-making. More robust and capable of handling a wider variety of board states.
+- **Neural Network**: A highly sophisticated AI trained using deep learning techniques. The most advanced and challenging opponent.
+
+**How to Play**
+Select an AI Opponent: Choose between [Decision Tree]({{ site.baseurl }}/tic-tac-toe2), Random Forest, or Neural Network.
+Make Your Move: Click on the board to place your mark (X or O).
+Challenge the AI: See if you can outsmart the AI and win the game!
+
+**Why This Project?**
+This project was created to explore the capabilities of different machine learning models in a simple yet strategic game like Tic Tac Toe. By training the AI on my previous games, I aimed to create opponents that not only play optimally but also reflect my unique playing style. Interested in how it works under the hood? Check out the GitHub repository for the full source code and documentation. If you have any feedback, suggestions, or questions, feel free to reach out to me directly. Enjoy the game, and may the best player win! 🎮
+
 [Play Tic-Tac-Toe with your friends]({{ site.baseurl }}/TicTacToe) or try to [beat me in Tic-Tac-Toe]({{ site.baseurl }}/tic-tac-toe2) - or more prcisely, a decision tree trained on my previous games!
 
 ### Projects
