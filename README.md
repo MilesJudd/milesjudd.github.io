@@ -2,7 +2,7 @@
 
 I am a Doctor of Philosophy (DPhil) candidate in Engineering Science at the University of Oxford, specialising in masonry in-situ testing and material identification (MINT). My research focuses on developing algorithms for material property analysis using vision-based strain data and the Virtual Fields Method (VFM). I am passionate about leveraging technical skills to solve complex engineering problems.
 
-Technical Skills: MATLAB, Python, CAD, FEM (DIANA FEA), DIC
+**Technical Skills**: MATLAB, Python, CAD, FEM (DIANA FEA), DIC
 
 ### Tic Tac Toe AI Player
 Welcome to my Tic Tac Toe AI Player project! This is a fun and interactive implementation of the classic game, where you can play against AI opponents trained using different machine learning models. The AI players have been trained on a dataset of my previous Tic Tac Toe games, ensuring they mimic my playing style and designed to challenge you at various difficulty levels.
