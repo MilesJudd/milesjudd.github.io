@@ -2,7 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const board = document.getElementById('board');
     const cells = document.querySelectorAll('.cell');
     const status = document.getElementById('status');
+    const resetButton = document.getElementById('reset-button');
     let currentPlayer = 'X';
+    let gameActive = true;
 
     // Function to get the current board state
     function getBoardState() {
@@ -54,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 status.textContent = "It's a draw!";
             } else {
                 currentPlayer = 'X';
+                status.textContent = "Player X's turn";
             }
         }
     }
@@ -63,22 +66,38 @@ document.addEventListener('DOMContentLoaded', () => {
         cells.forEach(cell => cell.style.pointerEvents = 'none');
     }
 
+    // Function to reset the game
+    function resetGame() {
+        cells.forEach(cell => {
+            cell.textContent = '';
+            cell.style.pointerEvents = 'auto';
+        });
+        currentPlayer = 'X';
+        gameActive = true;
+        status.textContent = "Player X's turn";
+    }
+
     // Handle cell clicks
     cells.forEach(cell => {
         cell.addEventListener('click', () => {
-            console.log("Cell clicked:", cell.dataset.index);  // Debugging line
-            if (!cell.textContent) {
+            if (!cell.textContent && gameActive) {
                 cell.textContent = currentPlayer;
                 if (checkWin(currentPlayer)) {
                     status.textContent = `${currentPlayer} wins!`;
                     disableBoard();
+                    gameActive = false;
                 } else if (isBoardFull()) {
                     status.textContent = "It's a draw!";
+                    gameActive = false;
                 } else {
                     currentPlayer = 'O';
-                    makeAIMove();  // AI makes its move after the player
+                    status.textContent = "AI is thinking...";
+                    setTimeout(makeAIMove, 500);  // AI makes its move after a short delay
                 }
             }
         });
     });
+
+    // Handle reset button click
+    resetButton.addEventListener('click', resetGame);
 });
