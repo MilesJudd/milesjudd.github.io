@@ -11,7 +11,7 @@ Choose to play against one of three AI models:
 - [**Decision Tree**]({{ site.baseurl }}/tic-tac-toe2): A simple yet effective AI based on decision tree logic. Fast and efficient, but may struggle with complex board states.
 - [**Random Forest**]({{ site.baseurl }}/tic-tac-toe (RF)): A more advanced AI that uses an ensemble of decision trees for better decision-making. More robust and capable of handling a wider variety of board states.
 - **Neural Network**: A highly sophisticated AI trained using deep learning techniques. The most advanced and challenging opponent.
-- [**Support Vector Machine**]({{ site.baseurl }}/tic-tac-toe (SVM)):
+- [**Support Vector Machine**]({{ site.baseurl }}/tic-tac-toe (SVM)):  A supervised learning method, using a support vector machine to classify optimal moves. While slightly slower to train compared to decision trees, it excels in generalisation and can adapt well to diverse board states.
 
 **How to Play?** Choose between [Decision Tree]({{ site.baseurl }}/tic-tac-toe2), [Random Forest]({{ site.baseurl }}/tic-tac-toe (RF)), Neural Network, or [Support Vector Machine]({{ site.baseurl }}/tic-tac-toe (SVM)).
 Make Your Move: Click on the board to place your mark (X or O).
