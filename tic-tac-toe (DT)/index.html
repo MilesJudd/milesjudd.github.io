@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic-Tac-Toe AI</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="tictactoe_model.js"></script>  <!-- Load the AI model first -->
-    <script src="script.js"></script>  <!-- Load the game logic -->
+    <script src="tictactoe_model.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
     <h1>Tic-Tac-Toe AI</h1>
@@ -44,9 +44,15 @@
         </ul>
 
         <!-- Add the Decision Tree Image Here -->
-        <h3>Decision Tree Visualisation</h3>
-        <img src="decision_tree.svg" alt="Decision Tree Visualization" style="max-width: 100%; height: auto;">
+        <h3>Decision Tree Visualization</h3>
+        <img src="decision_tree.svg" alt="Decision Tree Visualization" class="preview-image" style="max-width: 200px; cursor: pointer;">
         <p>The decision tree above shows how the AI makes moves based on the current board state.</p>
+
+        <!-- Modal for Enlarged Image -->
+        <div id="image-modal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modal-image">
+        </div>
 
         <h3>Research Findings</h3>
         <p>The AI prioritizes controlling the center of the board and blocking opponent wins. It achieves near-optimal performance, with a slight tendency to draw in complex scenarios.</p>
