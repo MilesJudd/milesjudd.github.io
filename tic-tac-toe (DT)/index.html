@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic-Tac-Toe AI</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="tictactoe_model.js"></script>  <!-- Load the AI model first -->
+    <script src="script.js"></script>  <!-- Load the game logic -->
 </head>
 <body>
     <h1>Tic-Tac-Toe AI</h1>
@@ -22,11 +24,11 @@
     <p id="status">Player X's turn</p>
     <button id="reset-button">Reset Game</button>
 
-    <!-- Additional Information Section -->
+    <!-- Additional AI Model Information -->
     <div id="additional-info">
         <h2>About the AI Model</h2>
-        <p>This Tic-Tac-Toe AI is powered by a decision tree model trained on thousands of games. Below are some key insights:</p>
-        
+        <p>This Tic-Tac-Toe AI is based on a decision tree model trained on thousands of games. Below are some key insights:</p>
+
         <h3>Performance Metrics</h3>
         <ul>
             <li><strong>Win Rate:</strong> 95%</li>
@@ -41,28 +43,12 @@
             <li><strong>Most Important Feature:</strong> Center Control</li>
         </ul>
 
-        <!-- Decision Tree Image with Clickable Preview -->
+        <!-- Decision Tree Preview (Opens in New Tab) -->
         <h3>Decision Tree Visualization</h3>
         <a href="decision_tree.svg" target="_blank">
             <img src="decision_tree.svg" alt="Decision Tree Visualization" class="preview-image">
         </a>
-        <p>The decision tree above shows how the AI makes moves based on the current board state.</p>
-
-        <!-- Modal for Enlarged Image -->
-        <div id="image-modal" class="modal">
-            <span class="close">&times;</span>
-            <img class="modal-content" id="modal-image">
-        </div>
-
-        <h3>Research Findings</h3>
-        <p>The AI prioritizes controlling the center of the board and blocking opponent wins. It achieves near-optimal performance, with a slight tendency to draw in complex scenarios.</p>
-
-        <h3>Future Improvements</h3>
-        <p>Potential enhancements include pruning the decision tree for efficiency and integrating reinforcement learning for adaptability.</p>
+        <p>Click the image to view the full decision tree used by the AI.</p>
     </div>
-
-    <!-- Load Scripts at the End to Ensure Proper Execution -->
-    <script src="tictactoe_model.js"></script>
-    <script src="script.js"></script>
 </body>
 </html>
