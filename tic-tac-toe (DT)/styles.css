@@ -2,9 +2,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
     margin: 0;
+    padding: 20px; /* Add padding to create space at the top */
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
 }
@@ -104,4 +103,3 @@ th, td {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-
