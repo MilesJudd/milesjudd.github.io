@@ -100,4 +100,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Handle reset button click
     resetButton.addEventListener('click', resetGame);
+
+    // ==================================================
+    // Modal functionality for the decision tree image
+    // ==================================================
+
+    // Get the modal and preview image
+    const modal = document.getElementById("image-modal");
+    const previewImage = document.querySelector(".preview-image");
+    const modalImage = document.getElementById("modal-image");
+
+    // Open the modal when the preview image is clicked
+    if (previewImage) {
+        previewImage.onclick = function () {
+            modal.style.display = "block";
+            modalImage.src = this.src; // Set the modal image source to the preview image source
+        };
+    }
+
+    // Close the modal when the close button is clicked
+    const closeButton = document.querySelector(".close");
+    if (closeButton) {
+        closeButton.onclick = function () {
+            modal.style.display = "none";
+        };
+    }
+
+    // Close the modal when clicking outside the image
+    window.onclick = function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    };
 });
