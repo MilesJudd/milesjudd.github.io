@@ -6,67 +6,25 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentPlayer = 'X';
     let gameActive = true;
 
-    // Function to get the current board state
-    function getBoardState() {
-        return Array.from(cells).map(cell => {
-            if (cell.textContent === 'X') return 1;  // Player is X
-            if (cell.textContent === 'O') return 2;  // AI is O
-            return 0;  // Empty cell
-        });
-    }
-
-    // Function to check for a win
     function checkWin(player) {
         const winningCombinations = [
-            [0, 1, 2], [3, 4, 5], [6, 7, 8],  // Rows
-            [0, 3, 6], [1, 4, 7], [2, 5, 8],  // Columns
-            [0, 4, 8], [2, 4, 6]              // Diagonals
+            [0, 1, 2], [3, 4, 5], [6, 7, 8],
+            [0, 3, 6], [1, 4, 7], [2, 5, 8],
+            [0, 4, 8], [2, 4, 6]
         ];
         return winningCombinations.some(combination =>
             combination.every(index => cells[index].textContent === player)
         );
     }
 
-    // Function to check if the board is full
     function isBoardFull() {
         return Array.from(cells).every(cell => cell.textContent);
     }
 
-    // Function to make the AI's move
-    function makeAIMove() {
-        const boardState = getBoardState();
-        const scores = score(boardState);  // Use the AI model to predict scores
-        let bestMove = -1;
-        let maxScore = -Infinity;
-
-        // Find the move with the highest score
-        for (let i = 0; i < scores.length; i++) {
-            if (boardState[i] === 0 && scores[i] > maxScore) {  // Only consider empty cells
-                maxScore = scores[i];
-                bestMove = i;
-            }
-        }
-
-        if (bestMove !== -1) {
-            cells[bestMove].textContent = 'O';  // AI plays 'O'
-            if (checkWin('O')) {
-                status.textContent = 'O wins!';
-                disableBoard();
-            } else if (isBoardFull()) {
-                status.textContent = "It's a draw!";
-            } else {
-                currentPlayer = 'X';
-                status.textContent = "Player X's turn";
-            }
-        }
-    }
-
-    // Function to disable the board after a win
     function disableBoard() {
         cells.forEach(cell => cell.style.pointerEvents = 'none');
     }
 
-    // Function to reset the game
     function resetGame() {
         cells.forEach(cell => {
             cell.textContent = '';
@@ -77,7 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
         status.textContent = "Player X's turn";
     }
 
-    // Handle cell clicks
     cells.forEach(cell => {
         cell.addEventListener('click', () => {
             if (!cell.textContent && gameActive) {
@@ -90,46 +47,41 @@ document.addEventListener('DOMContentLoaded', () => {
                     status.textContent = "It's a draw!";
                     gameActive = false;
                 } else {
-                    currentPlayer = 'O';
-                    status.textContent = "AI is thinking...";
-                    setTimeout(makeAIMove, 500);  // AI makes its move after a short delay
+                    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+                    status.textContent = `${currentPlayer}'s turn`;
                 }
             }
         });
     });
 
-    // Handle reset button click
     resetButton.addEventListener('click', resetGame);
 
-    // ==================================================
-    // Modal functionality for the decision tree image
-    // ==================================================
-
-    // Get the modal and preview image
+    // ==============================
+    // Decision Tree Image Modal
+    // ==============================
     const modal = document.getElementById("image-modal");
     const previewImage = document.querySelector(".preview-image");
     const modalImage = document.getElementById("modal-image");
-
-    // Open the modal when the preview image is clicked
-    if (previewImage) {
-        previewImage.onclick = function () {
-            modal.style.display = "block";
-            modalImage.src = this.src; // Set the modal image source to the preview image source
-        };
-    }
-
-    // Close the modal when the close button is clicked
     const closeButton = document.querySelector(".close");
-    if (closeButton) {
-        closeButton.onclick = function () {
-            modal.style.display = "none";
-        };
+
+    // Open modal on click
+    if (previewImage) {
+        previewImage.addEventListener("click", () => {
+            modal.style.display = "flex";
+            modalImage.src = previewImage.src;
+        });
     }
 
-    // Close the modal when clicking outside the image
-    window.onclick = function (event) {
+    // Close modal on click outside image or close button
+    if (closeButton) {
+        closeButton.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+    }
+
+    window.addEventListener("click", (event) => {
         if (event.target === modal) {
             modal.style.display = "none";
         }
-    };
+    });
 });
