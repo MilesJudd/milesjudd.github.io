@@ -29,6 +29,7 @@ Challenge the AI: See if you can outsmart the AI and win the game!
 
 ### Publications
 
+- **Judd, M. R. W., Wilson, R., Sangirardi, M., Pulatsu, B., & Acikgoz, S. (2025).** Experimental characterisation of hydraulic lime mortar and clay brick elasticity using the Virtual Fields Method. *Construction and Building Materials, vol 493*. [https://doi.org/10.1016/j.conbuildmat.2025.143076](https://doi.org/10.1016/j.conbuildmat.2025.143076)
 - **Judd, M. R. W., Sangirardi, M., & Acikgoz, S. (2025).** The influence of Digital Image Correlation parameters on the accuracy of elastic property identification of brick and mortar from compression stack tests. *18th International Brick and Block Masonry Conference (IB2MaC 2024)*. *Lecture Notes in Civil Engineering, vol 614*. Springer, Cham. [https://doi.org/10.1007/978-3-031-73310-9_80](https://doi.org/10.1007/978-3-031-73310-9_80)
 - **Sangirardi, M., Judd, M. R. W., & Acikgoz, S. (2025).** Identification of Softening Constitutive Properties of Brittle Materials Using the Virtual Fields Method. *18th International Brick and Block Masonry Conference (IB2MaC 2024)*. *Lecture Notes in Civil Engineering, vol 613, pp. 341–350*. Springer, Cham. [https://doi.org/10.1007/978-3-031-73314-7_25](https://doi.org/10.1007/978-3-031-73314-7_25)
 - **Judd, M. R. W., Sangirardi, M., & Acikgoz, S. (2024).** A Practical Method for Robust Elastic Characterisation of Mortar in Flat Jack Tests. *Available at SSRN*. [http://dx.doi.org/10.2139/ssrn.4990690](http://dx.doi.org/10.2139/ssrn.4990690)
