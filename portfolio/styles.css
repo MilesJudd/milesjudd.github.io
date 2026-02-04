@@ -21,14 +21,17 @@ body{
   line-height:1.45;
 }
 
-/* Page fade-in after splash */
-body {
+/* PAGE FADE-IN (fade only content, not the overlay) */
+.topbar,
+.wrap,
+.site-footer {
   opacity: 0;
   transition: opacity 500ms ease-out;
 }
 
-/* When splash is done */
-body.page-visible {
+body.page-visible .topbar,
+body.page-visible .wrap,
+body.page-visible .site-footer {
   opacity: 1;
 }
 
@@ -67,6 +70,7 @@ body.page-visible {
 /* fade out state: overlay fades to transparent and pointer-events disabled */
 .splash--fade{
   animation: splash-fade 750ms ease-out forwards;
+  pointer-events: none; /* stop intercepting clicks while fading */
 }
 
 /* fade keyframe: fade overlay entirely */
@@ -77,9 +81,14 @@ body.page-visible {
 
 /* Accessibility: don't animate for reduce-motion users */
 @media (prefers-reduced-motion: reduce) {
-  .splash-logo, .splash-overlay { animation: none !important; transition: none !important; }
+  .splash-logo, .splash-overlay,
+  .topbar, .wrap, .site-footer {
+    animation: none !important;
+    transition: none !important;
+  }
+  /* ensure content is visible immediately for reduced-motion users */
+  .topbar, .wrap, .site-footer { opacity: 1 !important; }
 }
-
 
 /* Topbar */
 .topbar{
@@ -225,4 +234,3 @@ body.page-visible {
   .about{order:3}
   .footer-cards{order:5}
 }
-
