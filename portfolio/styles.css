@@ -21,6 +21,17 @@ body{
   line-height:1.45;
 }
 
+/* Page fade-in after splash */
+body {
+  opacity: 0;
+  transition: opacity 500ms ease-out;
+}
+
+/* When splash is done */
+body.page-visible {
+  opacity: 1;
+}
+
 /* SPLASH OVERLAY */
 .splash-overlay{
   position: fixed;
