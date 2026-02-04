@@ -55,7 +55,7 @@ body{
 
 /* fade out state: overlay fades to transparent and pointer-events disabled */
 .splash--fade{
-  animation: splash-fade 400ms ease-out forwards;
+  animation: splash-fade 750ms ease-out forwards;
 }
 
 /* fade keyframe: fade overlay entirely */
