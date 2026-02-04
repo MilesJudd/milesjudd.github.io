@@ -149,10 +149,21 @@ body.page-visible .site-footer {
 .wrap{max-width:var(--maxw);margin:20px auto;padding:0 18px 48px}
 
 /* ---------- Grid ---------- */
+/* Outer grid contains the .two-column and footer cards.
+   Make it single-column so the internal two-column grid controls layout. */
 .grid{
   display:grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+  align-items:start;
+}
+
+/* Make .two-column a two-column grid: left column stacks portrait + about,
+   right column is projects that spans both rows. Contact will stretch full width below. */
+.two-column{
+  display:grid;
   grid-template-columns: 320px 1fr;
-  grid-template-rows: auto auto auto auto;
+  grid-auto-rows: auto;
   gap: var(--gap);
   align-items:start;
 }
@@ -166,8 +177,8 @@ body.page-visible .site-footer {
   border: 1px solid rgba(0,0,0,0.03);
 }
 
-/* ---------- Left column ---------- */
-.portrait{
+/* ---------- Left column (now scoped to .two-column) ---------- */
+.two-column .portrait{
   grid-column: 1 / 2;
   grid-row: 1 / 2;
   display:flex;
@@ -176,7 +187,7 @@ body.page-visible .site-footer {
   padding:10px;
 }
 
-.portrait img{
+.two-column .portrait img{
   width:100%;
   max-width:280px;
   height:auto;
@@ -184,15 +195,15 @@ body.page-visible .site-footer {
   object-fit:cover;
 }
 
-.about{
+.two-column .about{
   grid-column: 1 / 2;
   grid-row: 2 / 3;
 }
 
-/* ---------- Projects ---------- */
-.projects{
+/* ---------- Projects (right column spanning the two left rows) ---------- */
+.two-column .projects{
   grid-column: 2 / 3;
-  grid-row: 1 / 3;
+  grid-row: 1 / span 2; /* span portrait + about height */
   display:flex;
   flex-direction:column;
   gap:14px;
@@ -228,10 +239,10 @@ body.page-visible .site-footer {
   color:var(--muted);
 }
 
-/* ---------- Contact ---------- */
-.contact{
+/* ---------- Contact (spans full width under the two columns) ---------- */
+.two-column .contact{
   grid-column: 1 / -1;
-  grid-row: 3 / 4;
+  /* will sit on the next available row and span both columns */
   display:flex;
   background:linear-gradient(180deg, #fff7f7, #fff3f3);
   padding:0;
@@ -306,7 +317,23 @@ body.page-visible .site-footer {
 /* ---------- Responsive ---------- */
 @media (max-width:1100px){
   .grid{
-    grid-template-columns: 1fr 1fr;
+    /* outer grid stays single column */
+    grid-template-columns: 1fr;
+  }
+
+  /* collapse two-column into a stacked layout when narrower than the left column */
+  .two-column{
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+
+  .two-column .projects{
+    grid-column: 1 / -1;
+    grid-row: 3 / 4; /* after portrait + about */
+  }
+
+  .two-column .contact{
+    grid-column: 1 / -1;
   }
 }
 
