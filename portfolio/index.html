@@ -12,57 +12,18 @@
 
   <link rel="stylesheet" href="styles.css">
 </head>
-<script>
-  (function() {
-    const overlay = document.getElementById('splashOverlay');
-    const body = document.body;
-
-    // Timing: visibleDuration = how long logo stays fully visible (ms)
-    // fadeDuration = length of fade out animation (ms)
-    const visibleDuration = 100; // show  for 1 second
-    const fadeDuration = 40;     // fade-out 400ms
-
-    // Respect prefers-reduced-motion
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduceMotion) {
-      // Skip animation: remove overlay immediately
-      overlay.remove();
-      return;
-    }
-
-    // Prevent scrolling while splash is active
-    body.style.overflow = 'hidden';
-
-    // After visibleDuration, add fade class which triggers CSS animation
-    setTimeout(() => {
-      overlay.classList.add('splash--fade');
-      // After fade animation ends, remove overlay and restore scrolling
-      setTimeout(() => {
-        overlay.remove();
-        body.style.overflow = '';
-      }, fadeDuration);
-    }, visibleDuration);
-
-    // Optional safety: if animation doesn't run, remove after a max timeout
-    setTimeout(() => {
-      if (document.body && document.getElementById('splashOverlay')) {
-        document.getElementById('splashOverlay').remove();
-        body.style.overflow = '';
-      }
-    }, visibleDuration + fadeDuration + 1000);
-  })();
-</script>
-</body>
+<body>
 
   <!-- Splash overlay: shows logo first, then fades out -->
   <div id="splashOverlay" class="splash-overlay" aria-hidden="true">
-    <img src="assets/logo.jpg" alt="Your Logo" class="splash-logo" />
+    <img src="assets/logo.jpg" alt="Miles R. W. Judd — Logo" class="splash-logo" />
   </div>
+
   <header class="topbar">
     <div class="brand">
       <span class="brand-first">MILES R. W.</span> <span class="brand-last">JUDD</span>
     </div>
-    <nav class="nav">
+    <nav class="nav" aria-label="Main navigation">
       <a href="#projects">PROJECTS</a>
       <a href="#about">ABOUT</a>
       <a href="#projects">PUBLICATIONS</a>
@@ -118,7 +79,7 @@
 
       <!-- Footer links -->
       <footer class="card footer-cards">
-        <a href="#" target="_blank">LINKEDIN</a>
+        <a href="#" target="_blank" rel="noopener">LINKEDIN</a>
       </footer>
     </div>
   </main>
@@ -127,9 +88,61 @@
     <p>© <span id="year"></span> Miles R. W. Judd</p>
   </footer>
 
+  <!-- Splash script: runs after DOM is parsed -->
   <script>
-    // set current year
+    (function () {
+      // Run after the DOM is parsed to ensure overlay exists
+      document.addEventListener('DOMContentLoaded', function () {
+        const overlay = document.getElementById('splashOverlay');
+        if (!overlay) return; // nothing to do
+
+        const body = document.body;
+
+        // Timing in milliseconds
+        const visibleDuration = 1000; // show logo for 1 second
+        const fadeDuration = 400;     // fade-out duration (match CSS)
+
+        // Respect user's reduced-motion preference
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduceMotion) {
+          overlay.remove();
+          return;
+        }
+
+        // Prevent scrolling while splash is active
+        const previousBodyOverflow = body.style.overflow;
+        body.style.overflow = 'hidden';
+
+        // Start fade after visibleDuration
+        const fadeTimeout = setTimeout(() => {
+          overlay.classList.add('splash--fade');
+
+          // Remove overlay after fade finishes
+          const removeTimeout = setTimeout(() => {
+            overlay.remove();
+            body.style.overflow = previousBodyOverflow || '';
+            clearTimeout(removeTimeout);
+          }, fadeDuration);
+
+          clearTimeout(fadeTimeout);
+        }, visibleDuration);
+
+        // Safety fallback: ensure overlay is removed eventually
+        setTimeout(() => {
+          const el = document.getElementById('splashOverlay');
+          if (el) {
+            el.remove();
+            body.style.overflow = previousBodyOverflow || '';
+          }
+        }, visibleDuration + fadeDuration + 3000);
+      });
+    })();
+  </script>
+
+  <!-- Year script -->
+  <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
