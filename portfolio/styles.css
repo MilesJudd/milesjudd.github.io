@@ -21,6 +21,55 @@ body{
   line-height:1.45;
 }
 
+/* SPLASH OVERLAY */
+.splash-overlay{
+  position: fixed;
+  inset: 0;                     /* top:0; right:0; bottom:0; left:0 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--main-bg, #f6f4f0); /* fallback to your main color */
+  z-index: 9999;
+  pointer-events: auto;
+  will-change: opacity, transform;
+}
+
+/* Logo size and initial appearance */
+.splash-logo{
+  width: 120px;          /* adjust size as you want */
+  height: auto;
+  max-width: 55%;
+  max-height: 55%;
+  display:block;
+  transform-origin: center;
+  /* a little pop-in */
+  animation: splash-pop 320ms cubic-bezier(.2,.9,.3,1) 1;
+}
+
+/* small pop-in keyframe */
+@keyframes splash-pop {
+  0% { transform: scale(.85); opacity: .0; }
+  60% { transform: scale(1.06); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* fade out state: overlay fades to transparent and pointer-events disabled */
+.splash--fade{
+  animation: splash-fade 400ms ease-out forwards;
+}
+
+/* fade keyframe: fade overlay entirely */
+@keyframes splash-fade {
+  0%   { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; pointer-events: none; }
+}
+
+/* Accessibility: don't animate for reduce-motion users */
+@media (prefers-reduced-motion: reduce) {
+  .splash-logo, .splash-overlay { animation: none !important; transition: none !important; }
+}
+
+
 /* Topbar */
 .topbar{
   display:flex;
