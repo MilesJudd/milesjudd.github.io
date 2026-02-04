@@ -1,0 +1,137 @@
+/* Page spacing tweaks */
+.wrap {
+  padding-top: 28px;
+  padding-bottom: 70px;
+}
+
+/* Publications hero */
+.pub-hero {
+  max-width: var(--maxw);
+  margin: 0 auto 22px;
+  padding: 26px 28px;
+  border-radius: 16px;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.96),
+    rgba(255,255,255,0.92)
+  );
+  box-shadow: 0 6px 22px rgba(16,16,16,0.03);
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+.pub-hero h1 {
+  margin: 0 0 6px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.pub-hero p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Publications list container */
+.pub-list-card {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 16px;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.94),
+    rgba(255,255,255,0.90)
+  );
+  box-shadow: 0 6px 22px rgba(16,16,16,0.03);
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+/* List */
+.pub-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Individual publication */
+.pub-item {
+  padding: 14px 16px;
+  border-radius: 12px;
+  transition: background 160ms ease, transform 120ms ease;
+}
+
+.pub-item:hover {
+  background: rgba(58, 90, 64, 0.035); /* accent-tinted hover */
+  transform: translateY(-2px);
+}
+
+/* Citation text */
+.pub-citation {
+  margin: 0 0 6px 0;
+  color: var(--text);
+  font-size: 0.97rem;
+  line-height: 1.45;
+}
+
+/* Metadata (year/type) */
+.pub-meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* DOI / external links */
+.pub-links a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.pub-links a:hover {
+  text-decoration: underline;
+}
+
+/* Make long DOIs wrap nicely */
+.pub-links,
+.pub-links a {
+  word-break: break-word;
+}
+
+/* Optional: year separators (if you add them later) */
+.pub-year {
+  margin: 6px 0 2px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Accessibility & motion */
+@media (prefers-reduced-motion: reduce) {
+  .pub-item {
+    transition: none !important;
+  }
+}
+
+/* Mobile tweaks */
+@media (max-width: 720px) {
+  .pub-hero {
+    padding: 22px;
+  }
+
+  .pub-hero h1 {
+    font-size: 1.35rem;
+  }
+
+  .pub-item {
+    padding: 12px 14px;
+  }
+
+  .pub-citation {
+    font-size: 0.95rem;
+  }
+}
