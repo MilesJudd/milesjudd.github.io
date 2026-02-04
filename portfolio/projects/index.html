@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects — Miles R. W. Judd</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <meta name="description" content="Projects by Miles R. W. Judd — MINT, camera-based operational modal analysis, and AI at BMW MINI Plant Oxford.">
+
+  <!-- Page-specific small layout tweaks (keeps global stylesheet untouched) -->
+  <style>
+    /* Project list layout: image left, text right */
+    .projects-list { display:flex; flex-direction:column; gap:20px; }
+
+    .project-item{
+      display:flex;
+      gap:20px;
+      align-items:flex-start;
+      padding:18px;
+      border-radius:12px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.92));
+      box-shadow: 0 6px 18px rgba(16,16,16,0.03);
+      border: 1px solid rgba(0,0,0,0.03);
+    }
+
+    .project-thumb{
+      flex: 0 0 220px; /* fixed-ish thumb column */
+      display:block;
+    }
+
+    .project-thumb img{
+      width:100%;
+      height:auto;
+      border-radius:10px;
+      display:block;
+      object-fit:cover;
+    }
+
+    .project-content{
+      flex:1 1 auto;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+
+    .project-content h3{
+      margin:0;
+      font-size:1.05rem;
+    }
+
+    .project-content p{ margin:0; color:var(--muted); line-height:1.45; }
+
+    .project-meta { font-size:0.95rem; color:var(--muted); }
+
+    .project-cta {
+      margin-top:8px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .project-cta a {
+      text-decoration:none;
+      padding:8px 12px;
+      border-radius:10px;
+      background: linear-gradient(180deg, rgba(0,0,0,0.03), rgba(0,0,0,0.01));
+      border: 1px solid rgba(0,0,0,0.04);
+      color:var(--text);
+      font-weight:600;
+    }
+
+    /* responsive: stack on narrow screens */
+    @media (max-width:720px){
+      .project-item{
+        flex-direction:column;
+      }
+      .project-thumb{ flex: 0 0 auto; width:100%; }
+      .project-thumb img{ max-height:320px; width:100%; object-fit:cover; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- header include -->
+  <div data-include="../header.html"></div>
+
+  <main class="wrap">
+    <div class="grid">
+      <section class="card" id="projects">
+        <h1>Projects</h1>
+
+        <div class="projects-list" aria-live="polite">
+          <!-- Project 1: MINT -->
+          <article class="project-item" id="proj-mint">
+            <a class="project-thumb" href="#" aria-hidden="true">
+              <!-- replace ../assets/mint.jpg with your real image -->
+              <img src="../assets/mint.jpg" alt="Masonry sample showing DIC speckle pattern (MINT project)">
+            </a>
+
+            <div class="project-content">
+              <h3>MINT — Masonry in-situ testing and material identification</h3>
+              <p class="project-meta">
+                Funded by the Engineering and Physical Sciences Research Council (EPSRC).
+              </p>
+
+              <p>
+                The MINT project aims to estimate mechanical properties of existing masonry assets using Digital Image Correlation (DIC) techniques combined with the Virtual Fields Method (VFM). We apply non-contact optical measurements and inverse methods to extract stiffness and elastic parameters from standard in-situ tests, enabling improved condition assessment of heritage and historic masonry.
+              </p>
+
+              <div class="project-cta">
+                <a href="#" target="_blank" rel="noopener">Project details</a>
+                <a href="#" target="_blank" rel="noopener">Related publication</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: High-speed camera OMA -->
+          <article class="project-item" id="proj-oma">
+            <a class="project-thumb" href="#" aria-hidden="true">
+              <!-- replace ../assets/oma.jpg with your real image -->
+              <img src="../assets/oma.jpg" alt="High-speed camera capturing a vibrating test structure">
+            </a>
+
+            <div class="project-content">
+              <h3>High-speed camera based operational modal analysis</h3>
+              <p class="project-meta">
+                Camera-based Operational Modal Analysis (OMA) and the <em>pyOMA</em> toolbox.
+              </p>
+
+              <p>
+                This work compares camera-based OMA with conventional experimental modal analysis using piezoelectric sensors. We developed a Python toolbox, <em>pyOMA</em>, implementing the Frequency Domain Decomposition (FDD) method. The methods were validated on a reference structure and tested on a custom setup with emphasis on how sensor mass affects identified modal properties.
+              </p>
+
+              <div class="project-cta">
+                <a href="#" target="_blank" rel="noopener">pyOMA toolbox</a>
+                <a href="#" target="_blank" rel="noopener">Validation data</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: AI at BMW MINI Plant Oxford -->
+          <article class="project-item" id="proj-bmw">
+            <a class="project-thumb" href="#" aria-hidden="true">
+              <!-- replace ../assets/bmw-mini.jpg with your real image -->
+              <img src="../assets/bmw-mini.jpg" alt="BMW MINI Plant Oxford — factory floor">
+            </a>
+
+            <div class="project-content">
+              <h3>AI at BMW MINI Plant Oxford</h3>
+              <p class="project-meta">
+                Collaboration with the Oxford SDG Impact Lab — AI roadmap for manufacturing.
+              </p>
+
+              <p>
+                Together with fellows from the Oxford SDG Impact Lab, we worked with the BMW MINI Plant Oxford to create a roadmap for deploying AI tools in manufacturing. The initiative aimed to enhance operational efficiency and sustainability, aligning with the lab’s mission to drive impactful, sustainable development.
+              </p>
+
+              <div class="project-cta">
+                <a href="#" target="_blank" rel="noopener">Learn more</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- footer include -->
+  <div data-include="../footer.html"></div>
+
+  <script>
+    (async function includeParts(){
+      // include header/footer HTML from root-relative paths (one folder up)
+      const nodes = document.querySelectorAll('[data-include]');
+      for (const node of nodes) {
+        const url = node.getAttribute('data-include');
+        try {
+          const res = await fetch(url);
+          if (!res.ok) throw new Error(res.statusText);
+          node.innerHTML = await res.text();
+        } catch (err) {
+          console.error('Include failed:', url, err);
+        }
+      }
+
+      // set year in footer (if present)
+      const y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+
+      // mark active nav link (robust normalization)
+      const normalize = (p) => {
+        if (!p) return '/';
+        try {
+          const u = new URL(p, location.origin);
+          p = u.pathname;
+        } catch (e) {}
+        if (p.endsWith('index.html')) p = p.slice(0, -'index.html'.length);
+        if (!p.endsWith('/')) p += '/';
+        return p;
+      };
+
+      const current = normalize(location.pathname);
+      document.querySelectorAll('.nav a').forEach(a => {
+        const href = a.getAttribute('href');
+        if (!href) return;
+        const norm = normalize(href);
+        if (norm === current) {
+          a.classList.add('active');
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
