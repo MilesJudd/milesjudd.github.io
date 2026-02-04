@@ -20,16 +20,31 @@ body{
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   line-height:1.45;
+
+  /* default: page visible (fail-safe if JS is slow or fails) */
+  opacity: 1;
+  visibility: visible;
 }
 
-/* PAGE FADE-IN (fade only content, not the overlay) */
-.topbar,
-.wrap,
-.site-footer {
+/* When the splash is intentionally active we hide content (controlled by JS) */
+body.splash-active .topbar,
+body.splash-active .wrap,
+body.splash-active .site-footer {
   opacity: 0;
+  pointer-events: none;
+  /* keep transitions so we can fade back in */
   transition: opacity 500ms ease-out;
 }
 
+/* PAGE FADE-IN (fade only content, not the overlay). Keep transitions for normal animation. */
+.topbar,
+.wrap,
+.site-footer {
+  opacity: 1;
+  transition: opacity 500ms ease-out;
+}
+
+/* keep compatibility with existing JS that adds .page-visible */
 body.page-visible .topbar,
 body.page-visible .wrap,
 body.page-visible .site-footer {
@@ -47,6 +62,11 @@ body.page-visible .site-footer {
   z-index: 9999;
   pointer-events: auto;
   will-change: opacity, transform;
+}
+
+/* ensure overlay visually sits above and doesn't allow scrolling while active */
+body.splash-active {
+  overflow: hidden;
 }
 
 .splash-logo{
@@ -75,13 +95,23 @@ body.page-visible .site-footer {
   100% { opacity: 0; visibility: hidden; pointer-events: none; }
 }
 
+/* If user prefers reduced motion: disable animations/transitions but DO NOT change visibility logic */
 @media (prefers-reduced-motion: reduce) {
-  .splash-logo, .splash-overlay,
-  .topbar, .wrap, .site-footer {
+  .splash-logo,
+  .splash-overlay,
+  .topbar,
+  .wrap,
+  .site-footer {
     animation: none !important;
     transition: none !important;
   }
-  .topbar, .wrap, .site-footer { opacity: 1 !important; }
+
+  /* make sure reduced-motion does not accidentally hide content */
+  .topbar, .wrap, .site-footer {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
 }
 
 /* ---------- TOPBAR ---------- */
