@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Miles R. W. Judd — Publications</title>
+
+  <!-- Google Fonts (same as main) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main site styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Small page-specific tweaks (keeps look consistent) -->
+  <style>
+    :root {
+      --pub-card-pad: 24px;
+      --pub-gap: 18px;
+    }
+
+    /* Container tweaks */
+    .wrap { padding-top: 28px; padding-bottom: 60px; }
+
+    /* Publications hero/card */
+    .pub-hero {
+      max-width: var(--maxw);
+      margin: 0 auto 18px;
+      padding: var(--pub-card-pad);
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.92));
+      box-shadow: 0 6px 22px rgba(16,16,16,0.03);
+      border: 1px solid rgba(0,0,0,0.03);
+    }
+    .pub-hero h1 {
+      margin: 0 0 6px;
+      font-size: 1.6rem;
+      letter-spacing: 0.2px;
+    }
+    .pub-hero p { margin: 0; color: var(--muted); }
+
+    /* Publication list card */
+    .pub-list-card {
+      max-width: var(--maxw);
+      margin: 20px auto;
+      border-radius: 16px;
+      padding: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(255,255,255,0.90));
+      box-shadow: 0 6px 22px rgba(16,16,16,0.03);
+      border: 1px solid rgba(0,0,0,0.03);
+    }
+
+    .pub-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display:flex;
+      flex-direction:column;
+      gap: var(--pub-gap);
+    }
+
+    .pub-item {
+      padding: 12px 14px;
+      border-radius: 10px;
+      transition: background .18s ease, transform .12s ease;
+    }
+    .pub-item:hover {
+      background: rgba(58,90,64,0.03);
+      transform: translateY(-2px);
+    }
+
+    .pub-citation {
+      margin: 0 0 6px 0;
+      color: var(--text);
+      line-height: 1.42;
+      font-size: 0.98rem;
+    }
+
+    .pub-meta {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .pub-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .pub-links a:hover { text-decoration: underline; }
+
+    /* Year group heading */
+    .pub-year {
+      margin: 6px 0 10px;
+      font-weight: 700;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* Small helper to keep DOI wrapping neat */
+    .doi {
+      word-break: break-all;
+    }
+
+    /* Responsive */
+    @media (max-width:720px){
+      .pub-hero h1 { font-size: 1.3rem; }
+      .pub-item { padding: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <a href="index.html" style="color:inherit;text-decoration:none;">
+        <span class="brand-first">MILES R. W.</span> <span class="brand-last">JUDD</span>
+      </a>
+    </div>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html">HOME</a>
+      <a href="publications.html" aria-current="page">PUBLICATIONS</a>
+      <a href="index.html#contact">CONTACT</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <div class="pub-hero" role="region" aria-labelledby="pub-heading">
+      <h1 id="pub-heading">Publications</h1>
+      <p>Selected conference papers, proceedings and journal articles ordered roughly newest → oldest.</p>
+    </div>
+
+    <section class="pub-list-card" aria-labelledby="pub-list">
+      <ol class="pub-list" id="pub-list">
+        <!-- 2025 -->
+        <li class="pub-item" aria-label="2025 publication 1">
+          <div class="pub-citation">
+            Judd, M. R. W., Wilson, R., Sangirardi, M., Pulatsu, B., &amp; Acikgoz, S. (2025). <em>Experimental characterisation of hydraulic lime mortar and clay brick elasticity using the Virtual Fields Method.</em> <strong>Construction and Building Materials</strong>, vol 493. <span class="pub-links"><a href="https://doi.org/10.1016/j.conbuildmat.2025.143076" target="_blank" rel="noopener">https://doi.org/10.1016/j.conbuildmat.2025.143076</a></span>
+          </div>
+          <div class="pub-meta">Journal article — 2025</div>
+        </li>
+
+        <li class="pub-item" aria-label="2025 publication 2">
+          <div class="pub-citation">
+            Judd, M. R. W., Sangirardi, M., &amp; Acikgoz, S. (2025). <em>The influence of Digital Image Correlation parameters on the accuracy of elastic property identification of brick and mortar from compression stack tests.</em> 18th International Brick and Block Masonry Conference (IB2MaC 2024). Lecture Notes in Civil Engineering, vol 614. Springer, Cham. <span class="pub-links"><a href="https://doi.org/10.1007/978-3-031-73310-9_80" target="_blank" rel="noopener">https://doi.org/10.1007/978-3-031-73310-9_80</a></span>
+          </div>
+          <div class="pub-meta">Conference proceedings — 2025</div>
+        </li>
+
+        <li class="pub-item" aria-label="2025 publication 3">
+          <div class="pub-citation">
+            Sangirardi, M., Judd, M. R. W., &amp; Acikgoz, S. (2025). <em>Identification of Softening Constitutive Properties of Brittle Materials Using the Virtual Fields Method.</em> 18th International Brick and Block Masonry Conference (IB2MaC 2024). Lecture Notes in Civil Engineering, vol 613, pp. 341–350. Springer, Cham. <span class="pub-links"><a href="https://doi.org/10.1007/978-3-031-73314-7_25" target="_blank" rel="noopener">https://doi.org/10.1007/978-3-031-73314-7_25</a></span>
+          </div>
+          <div class="pub-meta">Conference proceedings — 2025</div>
+        </li>
+
+        <!-- 2024 -->
+        <li class="pub-item" aria-label="2024 publication 1">
+          <div class="pub-citation">
+            Judd, M. R. W., Sangirardi, M., &amp; Acikgoz, S. (2024). <em>A Practical Method for Robust Elastic Characterisation of Mortar in Flat Jack Tests.</em> Available at SSRN. <span class="pub-links"><a href="http://dx.doi.org/10.2139/ssrn.4990690" target="_blank" rel="noopener">http://dx.doi.org/10.2139/ssrn.4990690</a></span>
+          </div>
+          <div class="pub-meta">Preprint — 2024</div>
+        </li>
+
+        <li class="pub-item" aria-label="2024 publication 2">
+          <div class="pub-citation">
+            Judd, M. R. W., Sangirardi, M., &amp; Acikgoz, S. (2024). <em>Virtual fields characterisation of elasticity in mortars.</em> Proceedings of the SUBLime Conference 2024 – Towards the Next Generation of Sustainable Masonry Systems: Mortars, Renders, Plasters and Other Challenges, pp. 99–100.
+          </div>
+          <div class="pub-meta">Conference proceedings — 2024</div>
+        </li>
+
+        <li class="pub-item" aria-label="2024 publication 3">
+          <div class="pub-citation">
+            Judd, M., Squires, D., Akcicek, K., Sangirardi, M., &amp; Acikgoz, S. (2024). <em>Does Lack of CO2 Control in Environmental Chambers Influence the Strength and Stiffness of Hydraulic Lime Mortars?</em> Proceedings of the SUBLime Conference 2024. <span class="pub-links"><a href="https://doi.org/10.1051/matecconf/202440302002" target="_blank" rel="noopener">https://doi.org/10.1051/matecconf/202440302002</a></span>
+          </div>
+          <div class="pub-meta">Conference proceedings — 2024</div>
+        </li>
+
+        <!-- 2023 -->
+        <li class="pub-item" aria-label="2023 publication 1">
+          <div class="pub-citation">
+            Judd, M. R. W., Sangirardi, M., &amp; Acikgoz, S. (2023). <em>A Modified Virtual Fields Approach to Identify the Mechanical Properties of Mortar in Existing Masonry Structures Without Loading Information.</em> Structural Analysis of Historical Constructions (SAHC 2023). RILEM Bookseries, vol 47. Springer, Cham. <span class="pub-links"><a href="https://doi.org/10.1007/978-3-031-39603-8_34" target="_blank" rel="noopener">https://doi.org/10.1007/978-3-031-39603-8_34</a></span>
+          </div>
+          <div class="pub-meta">Conference proceedings — 2023</div>
+        </li>
+
+        <li class="pub-item" aria-label="2023 publication 2">
+          <div class="pub-citation">
+            Sangirardi, M., Judd, M. R. W., &amp; Acikgoz, S. (2023). <em>Determining the Young’s Modulus of Lime Mortar Using the Virtual Fields Method.</em> Structural Analysis of Historical Constructions (SAHC 2023). RILEM Bookseries, vol 47. Springer, Cham. <span class="pub-links"><a href="https://doi.org/10.1007/978-3-031-39603-8_35" target="_blank" rel="noopener">https://doi.org/10.1007/978-3-031-39603-8_35</a></span>
+          </div>
+          <div class="pub-meta">Conference proceedings — 2023</div>
+        </li>
+
+        <!-- 2022 -->
+        <li class="pub-item" aria-label="2022 publication 1">
+          <div class="pub-citation">
+            Gille, M., Judd, M. R. W., &amp; Rixen, D. J. (2022). <em>Stereoscopic High-Speed Camera-Based Operational Modal Analysis Using a One-Camera Setup.</em> Rotating Machinery, Optical Methods &amp; Scanning LDV Methods, Volume 6. Conference Proceedings of the Society for Experimental Mechanics Series. Springer, Cham. <span class="pub-links"><a href="https://doi.org/10.1007/978-3-031-04098-6_11" target="_blank" rel="noopener">https://doi.org/10.1007/978-3-031-04098-6_11</a></span>
+          </div>
+          <div class="pub-meta">Conference proceedings — 2022</div>
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Miles R. W. Judd</p>
+  </footer>
+
+  <script>
+    // set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
