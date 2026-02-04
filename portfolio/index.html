@@ -35,54 +35,81 @@
   <main class="wrap">
     <div class="grid">
 
-      <!-- Large intro card -->
+      <!-- Large intro card (full width) -->
       <article class="card large hero">
         <div class="hero-content">
           <h1>Artist Redefining <span class="em">Architecture</span> with <br>AI-Driven Design</h1>
         </div>
       </article>
 
-      <!-- Portrait -->
-      <aside class="card portrait">
-        <img src="assets/avatar.jpg" alt="Miles R. W. Judd" />
-      </aside>
+      <!-- NEW: Two-column stacked layout -->
+      <div class="two-column">
 
-      <!-- Right column project list -->
-      <section class="card projects" id="projects">
-        <div class="projects-header">
-          <h3>Musea</h3>
-          <a class="external" href="#" aria-label="Open project">⤴</a>
-        </div>
-        <div class="thumb">
-          <img src="assets/project1.jpg" alt="Project 1" />
-        </div>
-        <ul class="project-list">
-          <li>Elara</li>
-          <li>Verve</li>
-          <li>Zephyr</li>
-        </ul>
-      </section>
+        <!-- Left column: portrait (top) -->
+        <aside class="card portrait" id="portrait">
+          <img src="assets/avatar.jpg" alt="Miles R. W. Judd portrait" />
+        </aside>
 
-      <!-- About -->
-      <section class="card about" id="about">
-        <p>
-          <strong>Miles R. W. Judd</strong> is a PhD candidate in Engineering Science at the University of Oxford, interested in computer vision, numerical simulations and machine learning.
-        </p>
-      </section>
+        <!-- Left column: about / description (below portrait) -->
+        <section class="card about" id="about">
+          <p>
+            <strong>Miles R. W. Judd</strong> is a PhD candidate in Engineering Science at the University of Oxford, interested in computer vision, numerical simulations and machine learning.
+          </p>
+        </section>
 
-      <!-- Contact CTA -->
-      <a class="card contact" id="contact" href="mailto:miles.judd@eng.ox.ac.uk">
-        <div class="contact-inner">
-          <small>Have some questions?</small>
-          <h2>Contact me</h2>
-        </div>
-      </a>
+        <!-- Right column: projects tile (spans same height as portrait + about) -->
+        <section class="card projects" id="projects" aria-labelledby="projectsHeading">
+          <div class="projects-header">
+            <h3 id="projectsHeading">Projects</h3>
+            <a class="external" href="#" aria-label="Open project">⤴</a>
+          </div>
+
+          <div class="thumb">
+            <img src="assets/project1.jpg" alt="Project 1 thumbnail" />
+          </div>
+
+          <ul class="project-list">
+            <li><strong>Musea</strong> — Elara</li>
+            <li>Verve</li>
+            <li>Zephyr</li>
+          </ul>
+        </section>
+
+        <!-- Contact tile that spans both columns -->
+        <section class="card contact" id="contact" aria-labelledby="contactHeading">
+          <div class="contact-inner">
+            <small>Have some questions?</small>
+            <h2 id="contactHeading">Contact me</h2>
+
+            <div class="contact-links" role="list">
+              <a class="contact-link" href="https://github.com/yourusername" target="_blank" rel="noopener" role="listitem" aria-label="GitHub">
+                <!-- simple github svg -->
+                <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 .5C5.7.5.9 5.3.9 11.6c0 4.7 3 8.7 7.2 10.1.5.1.7-.2.7-.5v-1.9c-2.9.6-3.5-1.3-3.5-1.3-.5-1.2-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1.8 1.6 2.4 2.2 0 .8.1 1.6.1 2.4 4.2-1.4 7.2-5.4 7.2-10.1C23.1 5.3 18.3.5 12 .5z"/></svg>
+                <span>GitHub</span>
+              </a>
+
+              <a class="contact-link" href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener" role="listitem" aria-label="LinkedIn">
+                <!-- simple linkedin svg -->
+                <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8.25h5V24H0V8.25zM8.5 8.25h4.78v2.09h.07c.67-1.27 2.3-2.61 4.74-2.61 5.08 0 6.02 3.35 6.02 7.71V24h-5V16.5c0-1.79-.03-4.1-2.5-4.1-2.5 0-2.88 1.95-2.88 3.97V24h-5V8.25z"/></svg>
+                <span>LinkedIn</span>
+              </a>
+
+              <a class="contact-link" href="mailto:miles.judd@eng.ox.ac.uk" role="listitem" aria-label="Email">
+                <!-- mail svg -->
+                <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 13.065L.5 4.5V19.5A2 2 0 0 0 2.5 21.5h19a2 2 0 0 0 2-2V4.5L12 13.065zM12 10L23.5 1.5H.5L12 10z"/></svg>
+                <span>Email</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+      </div> <!-- end two-column -->
 
       <!-- Footer links -->
       <footer class="card footer-cards">
         <a href="#" target="_blank" rel="noopener">LINKEDIN</a>
       </footer>
-    </div>
+    </div> <!-- end grid -->
   </main>
 
   <footer class="site-footer">
@@ -92,18 +119,13 @@
   <!-- Splash script: runs after DOM is parsed -->
   <script>
     (function () {
-      // Run after the DOM is parsed to ensure overlay exists
       document.addEventListener('DOMContentLoaded', function () {
         const overlay = document.getElementById('splashOverlay');
-        if (!overlay) return; // nothing to do
+        if (!overlay) return;
 
         const body = document.body;
-
-        // Timing in milliseconds
-        const visibleDuration = 1500; // show logo for 1 second
-        const fadeDuration = 750;     // fade-out duration (match CSS)
-
-        // Respect user's reduced-motion preference
+        const visibleDuration = 1500;
+        const fadeDuration = 750;
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         if (reduceMotion) {
           overlay.remove();
@@ -111,15 +133,12 @@
           return;
         }
 
-        // Prevent scrolling while splash is active
         const previousBodyOverflow = body.style.overflow;
         body.style.overflow = 'hidden';
 
-        // Start fade after visibleDuration
         const fadeTimeout = setTimeout(() => {
           overlay.classList.add('splash--fade');
 
-          // Remove overlay after fade finishes
           const removeTimeout = setTimeout(() => {
             overlay.remove();
             body.style.overflow = previousBodyOverflow || '';
@@ -130,7 +149,6 @@
           clearTimeout(fadeTimeout);
         }, visibleDuration);
 
-        // Safety fallback: ensure overlay is removed eventually
         setTimeout(() => {
           const el = document.getElementById('splashOverlay');
           if (el) {
