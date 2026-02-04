@@ -1,0 +1,167 @@
+:root{
+  --main-bg: #f6f4f0;    /* your chosen main color */
+  --card-bg: #ffffff;
+  --text: #1f1f1f;
+  --muted: #6b6b6b;
+  --accent: #3a5a40;     /* subtle earthy accent — change if you prefer */
+  --radius: 18px;
+  --gap: 20px;
+  --maxw: 1100px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--main-bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+}
+
+/* Topbar */
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:22px;
+  max-width:var(--maxw);
+  margin:18px auto;
+  background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));
+  border-radius:14px;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.02);
+}
+.brand{font-weight:600;letter-spacing:0.6px}
+.brand-first{font-weight:300}
+.nav a{
+  margin-left:18px;
+  text-decoration:none;
+  color:var(--muted);
+  font-weight:600;
+}
+
+/* Layout wrapper */
+.wrap{max-width:var(--maxw);margin:20px auto;padding:0 18px 48px}
+
+/* Grid */
+.grid{
+  display:grid;
+  grid-template-columns: 1fr 320px 320px;
+  grid-template-rows: auto;
+  gap: var(--gap);
+  align-items:start;
+}
+
+/* Cards base */
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));
+  border-radius:var(--radius);
+  padding:22px;
+  box-shadow: 0 6px 22px rgba(16,16,16,0.03);
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+/* Specific cards */
+.hero{
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  display:flex;
+  align-items:flex-start;
+  justify-content:flex-start;
+  padding:28px;
+  min-height:220px;
+}
+.hero-content h1{
+  margin:0;
+  font-size:2.2rem;
+  line-height:1.05;
+  font-weight:700;
+}
+.hero .em{
+  font-weight:300;
+  font-style:italic;
+  color:var(--muted);
+}
+
+/* Portrait */
+.portrait{
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px;
+}
+.portrait img{
+  width:100%;
+  height:auto;
+  border-radius:14px;
+  object-fit:cover;
+}
+
+/* Projects column */
+.projects{
+  grid-column: 3 / 4;
+  grid-row: 1 / 4;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  padding:18px;
+}
+.projects-header{display:flex;justify-content:space-between;align-items:center}
+.projects-header h3{margin:0;font-size:1.05rem}
+.projects .thumb img{width:100%;border-radius:10px;display:block}
+.project-list{list-style:none;padding:0;margin:8px 0 0 0}
+.project-list li{padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.04);color:var(--muted)}
+
+/* About and other small cards */
+.about{grid-column:1 / 2}
+.contact{
+  grid-column:1 / 2;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(180deg, #fff7f7, #fff3f3);
+  text-decoration:none;
+  color:var(--text);
+  padding:0;
+  min-height:120px;
+}
+.contact-inner{padding:20px;text-align:left}
+.contact small{display:block;color:var(--muted);margin-bottom:6px}
+.contact h2{margin:0;font-size:1.6rem}
+
+/* Footer card */
+.footer-cards{
+  grid-column:1 / 3;
+  display:flex;
+  gap:12px;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+}
+.footer-cards a{flex:1;text-align:center;text-decoration:none;color:var(--muted);font-weight:600;padding:8px 12px;border-radius:10px}
+
+/* Page footer */
+.site-footer{text-align:center;color:var(--muted);padding:30px 0 60px}
+
+/* Responsive */
+@media (max-width:1100px){
+  .grid{grid-template-columns: 1fr 1fr; grid-auto-rows: auto;}
+  .projects{grid-column: 2 / 3; grid-row: 1 / 4}
+  .hero{grid-column:1 / 2}
+  .portrait{grid-column:1 / 2; grid-row:2 / 3}
+  .about{grid-column:1 / 2}
+  .footer-cards{grid-column:1 / 3}
+}
+@media (max-width:720px){
+  .topbar{flex-direction:column;gap:10px}
+  .grid{grid-template-columns: 1fr; padding-bottom:24px}
+  .projects{grid-column:1 / 2; order:4}
+  .portrait{order:2}
+  .hero{order:1}
+  .about{order:3}
+  .footer-cards{order:5}
+}
