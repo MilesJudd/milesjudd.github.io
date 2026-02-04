@@ -12,7 +12,48 @@
 
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<script>
+  (function() {
+    const overlay = document.getElementById('splashOverlay');
+    const body = document.body;
+
+    // Timing: visibleDuration = how long logo stays fully visible (ms)
+    // fadeDuration = length of fade out animation (ms)
+    const visibleDuration = 1000; // show logo for 1 second
+    const fadeDuration = 400;     // fade-out 400ms
+
+    // Respect prefers-reduced-motion
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) {
+      // Skip animation: remove overlay immediately
+      overlay.remove();
+      return;
+    }
+
+    // Prevent scrolling while splash is active
+    body.style.overflow = 'hidden';
+
+    // After visibleDuration, add fade class which triggers CSS animation
+    setTimeout(() => {
+      overlay.classList.add('splash--fade');
+      // After fade animation ends, remove overlay and restore scrolling
+      setTimeout(() => {
+        overlay.remove();
+        body.style.overflow = '';
+      }, fadeDuration);
+    }, visibleDuration);
+
+    // Optional safety: if animation doesn't run, remove after a max timeout
+    setTimeout(() => {
+      if (document.body && document.getElementById('splashOverlay')) {
+        document.getElementById('splashOverlay').remove();
+        body.style.overflow = '';
+      }
+    }, visibleDuration + fadeDuration + 1000);
+  })();
+</script>
+</body>
+
   <!-- Splash overlay: shows logo first, then fades out -->
   <div id="splashOverlay" class="splash-overlay" aria-hidden="true">
     <img src="assets/logo.png" alt="Your Logo" class="splash-logo" />
