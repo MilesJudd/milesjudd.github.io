@@ -9,6 +9,30 @@
   <link rel="stylesheet" href="../styles.css">
   <meta name="description" content="Publications by Miles R. W. Judd — masonry testing, virtual fields method, DIC, operational modal analysis, and AI in manufacturing.">
 </head>
+
+  <!-- Small defensive snippet: remove splash overlay if present and reveal page -->
+<script>
+  (function () {
+    try {
+      // Run as soon as DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else init();
+
+      function init() {
+        const o = document.getElementById('splashOverlay');
+        if (o) o.remove();                 // remove overlay if present
+        document.body.style.overflow = ''; // restore scrolling if it was locked
+        document.body.classList.add('page-visible'); // reveal content
+      }
+    } catch (err) {
+      // fail silently — don't block the page
+      console.error('Overlay cleanup error', err);
+      try { document.body.classList.add('page-visible'); } catch (e) {}
+    }
+  })();
+</script>
+
 <body>
 
   <!-- header include -->
