@@ -1,1 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Games — Miles R. W. Judd</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <meta name="description" content="Small browser games — play Tic-Tac-Toe and more.">
+</head>
+
+<body>
+
+  <!-- Early reveal snippet: run ASAP so the page won't stay hidden -->
+  <script>
+    (function () {
+      try {
+        function init() {
+          document.body.style.overflow = '';
+          document.body.classList.add('page-visible');
+        }
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', init);
+        } else init();
+      } catch (e) {
+        try { document.body.classList.add('page-visible'); } catch (_) {}
+      }
+    })();
+  </script>
+
+  <!-- header include -->
+  <div data-include="../header.html"></div>
+
+  <main class="wrap">
+    <div class="grid">
+
+      <section class="card" aria-labelledby="games-heading">
+        <h1 id="games-heading">Games</h1>
+        <p style="margin-top:8px;">
+          A tiny collection of lightweight browser games built in the same visual style as the site.
+          Click a tile to play — each game opens in the same tab.
+        </p>
+
+        <div style="margin-top:16px; display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:18px;">
+          <!-- Tic-Tac-Toe tile -->
+          <article class="card" style="padding:14px; display:flex; flex-direction:column; gap:12px; align-items:stretch;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <h3 style="margin:0; font-size:1.05rem;">Tic-Tac-Toe</h3>
+              <small style="color:var(--muted);">1–2 players</small>
+            </div>
+
+            <p style="margin:0; color:var(--muted);">
+              Quick classic — play locally against a friend. Keyboard accessible and mobile friendly.
+            </p>
+
+            <div style="display:flex; gap:10px; margin-top:8px; align-items:center;">
+              <a class="contact-link" href="tictactoe/" aria-label="Play Tic Tac Toe">Play</a>
+              <a class="contact-link" href="tictactoe/" aria-label="Open Tic Tac Toe (new tab)" target="_blank" rel="noopener">Open in new tab</a>
+            </div>
+          </article>
+
+          <!-- Placeholder for future games -->
+          <article class="card" style="padding:14px; display:flex; flex-direction:column; gap:12px; align-items:stretch; opacity:0.95;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <h3 style="margin:0; font-size:1.05rem;">More coming soon</h3>
+              <small style="color:var(--muted);">TBD</small>
+            </div>
+
+            <p style="margin:0; color:var(--muted);">
+              I’m planning a few more small utilities and games. Check back later or contact me if you have suggestions.
+            </p>
+
+            <div style="display:flex; gap:10px; margin-top:8px;">
+              <a class="contact-link" href="../contact/" aria-label="Contact">Suggest a game</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- footer include -->
+  <div data-include="../footer.html"></div>
+
+  <script>
+    (async function includeParts(){
+      const nodes = document.querySelectorAll('[data-include]');
+      for (const node of nodes) {
+        const url = node.getAttribute('data-include');
+        try {
+          const res = await fetch(url);
+          if (!res.ok) throw new Error(res.statusText);
+          node.innerHTML = await res.text();
+        } catch (err) {
+          console.error('Include failed:', url, err);
+        }
+      }
+
+      // set year in footer (if present)
+      const y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+
+      // mark active nav link (robust normalization)
+      const normalize = (p) => {
+        if (!p) return '/';
+        try {
+          const u = new URL(p, location.origin);
+          p = u.pathname;
+        } catch (e) {}
+        if (p.endsWith('index.html')) p = p.slice(0, -'index.html'.length);
+        if (!p.endsWith('/')) p += '/';
+        return p;
+      };
+
+      const current = normalize(location.pathname);
+      document.querySelectorAll('.nav a').forEach(a => {
+        const href = a.getAttribute('href');
+        if (!href) return;
+        const norm = normalize(href);
+        if (norm === current) {
+          a.classList.add('active');
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
 
