@@ -8,23 +8,44 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
   <meta name="description" content="Small browser games — play Tic-Tac-Toe and more.">
+
+  <!--
+    Critical single-page override:
+    If your global CSS hides .wrap/.topbar by default, this page forces them visible
+    so users don't see a blank screen while JS loads. This only affects this file.
+  -->
+  <style>
+    /* Force visibility on this page while JS initializes. Won't affect other pages. */
+    .topbar, .wrap, .site-footer { opacity: 1 !important; visibility: visible !important; pointer-events: auto !important; }
+  </style>
 </head>
 
 <body>
 
-  <!-- Early reveal snippet: run ASAP so the page won't stay hidden -->
+  <!--
+    Very early reveal script:
+    Run as soon as possible to add page-visible. Keeps this page visible even before includeParts runs.
+  -->
   <script>
-    (function () {
+    (function(){
       try {
-        function init() {
-          document.body.style.overflow = '';
+        // Prefer adding page-visible immediately — this avoids the "blank" state.
+        document.documentElement.classList.remove('no-js'); // in case you use this elsewhere
+        if (document.body) {
           document.body.classList.add('page-visible');
+          // if you use a splash-active pattern, also remove it here (safe noise)
+          document.body.classList.remove('splash-active');
+        } else {
+          // if body isn't created yet, wait for DOMContentLoaded
+          document.addEventListener('DOMContentLoaded', function(){
+            try {
+              document.body.classList.add('page-visible');
+              document.body.classList.remove('splash-active');
+            } catch(e) {}
+          });
         }
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', init);
-        } else init();
       } catch (e) {
-        try { document.body.classList.add('page-visible'); } catch (_) {}
+        /* fail silently */
       }
     })();
   </script>
@@ -84,6 +105,13 @@
   <!-- footer include -->
   <div data-include="../footer.html"></div>
 
+  <!-- noscript fallback -->
+  <noscript>
+    <style>
+      .topbar, .wrap, .site-footer { opacity:1 !important; visibility:visible !important; pointer-events:auto !important; }
+    </style>
+  </noscript>
+
   <script>
     (async function includeParts(){
       const nodes = document.querySelectorAll('[data-include]');
@@ -128,4 +156,3 @@
 
 </body>
 </html>
-
