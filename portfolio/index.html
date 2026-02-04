@@ -107,6 +107,7 @@
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         if (reduceMotion) {
           overlay.remove();
+          document.body.classList.add('page-visible');
           return;
         }
 
@@ -122,6 +123,7 @@
           const removeTimeout = setTimeout(() => {
             overlay.remove();
             body.style.overflow = previousBodyOverflow || '';
+            body.classList.add('page-visible');
             clearTimeout(removeTimeout);
           }, fadeDuration);
 
