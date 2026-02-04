@@ -1,9 +1,9 @@
 :root{
   --main-bg: #f6f4f0;    /* your chosen main color */
   --card-bg: #ffffff;
-  --text: #1f1f1f;
-  --muted: #6b6b6b;
-  --accent: #3a5a40;     /* subtle earthy accent — change if you prefer */
+  --text: #000000;       /* changed to black */
+  --muted: #000000;      /* changed to black */
+  --accent: #000000;     /* changed to black */
   --radius: 18px;
   --gap: 20px;
   --maxw: 1100px;
@@ -233,6 +233,7 @@ body.page-visible .site-footer {
   margin:8px 0 0 0;
 }
 
+/* project text color uses --muted, now black */
 .project-list li{
   padding:14px 0;
   border-bottom:1px solid rgba(0,0,0,0.04);
@@ -249,23 +250,32 @@ body.page-visible .site-footer {
   min-height:120px;
 }
 
+/* Center content and text inside the contact tile */
 .contact-inner{
   padding:20px;
   width:100%;
   display:flex;
   flex-direction:column;
   gap:12px;
+
+  /* NEW: center everything */
+  align-items: center;
+  text-align: center;
 }
 
-.contact small{color:var(--muted)}
-.contact h2{margin:0;font-size:1.6rem}
+/* ensure small and headings in contact are black */
+.contact small{ color: var(--text); }
+.contact h2{ margin:0; font-size:1.6rem; color: var(--text); }
 
+/* center the contact buttons as a group */
 .contact-links{
   display:flex;
   gap:12px;
   flex-wrap:wrap;
+  justify-content: center; /* NEW */
 }
 
+/* contact buttons inherit the site black color */
 .contact-link{
   display:inline-flex;
   align-items:center;
