@@ -7,7 +7,7 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
-  <meta name="description" content="Projects by Miles R. W. Judd — MINT, camera-based operational modal analysis, and AI at BMW MINI Plant Oxford.">
+  <meta name="description" content="Projects by Miles R. W. Judd — scientific machine learning, engineering simulation, FEM, engineering AI, and AI-assisted engineering workflows.">
 
   <!-- Page-specific small layout tweaks (keeps global stylesheet untouched) -->
   <style>
@@ -89,12 +89,47 @@
   <main class="wrap">
     <div class="grid">
       <section class="card" id="projects">
-        <h1>Projects</h1>
+        <h1>Scientific Machine Learning &amp; Engineering Projects</h1>
+        <p style="margin-top:10px;">
+          Selected projects spanning engineering simulation, scientific machine learning, computer vision, inverse problems, and AI for engineering.
+        </p>
 
         <div class="projects-list" aria-live="polite">
-          <!-- Project 1: MINT -->
+
+          <!-- Project 1: SimContext -->
+          <article class="project-item" id="proj-simcontext">
+            <a class="project-thumb" href="https://huggingface.co/spaces/MilesJudd/SimContext" target="_blank" rel="noopener">
+              <!-- replace ../assets/simcontext.jpg with a screenshot of your HF Space -->
+              <img src="../assets/simcontext.jpg" alt="SimContext - AI-ready engineering context generation from FEM models">
+            </a>
+
+            <div class="project-content">
+              <h3>SimContext — AI-Ready Engineering Context from Simulation Models</h3>
+              <p class="project-meta">
+                Engineering AI &middot; FEM &middot; ANSYS &middot; Abaqus &middot; LLM Workflows
+              </p>
+
+              <p>
+                SimContext is an engineering AI tool that transforms ANSYS and Abaqus simulation models into structured engineering knowledge and AI-ready context.
+              </p>
+
+              <p>
+                The system automatically parses FEM input files, extracts engineering metadata, identifies modelling risks, generates validation recommendations, and produces concise context summaries for LLMs, agents, and engineering RAG systems.
+              </p>
+
+              <p>
+                The project was motivated by a common engineering challenge: simulation models often contain valuable domain knowledge, but understanding an existing model can require manually reading thousands of lines of solver input.
+              </p>
+
+              <div class="project-cta">
+                <a href="https://huggingface.co/spaces/MilesJu/SimContext" target="_blank" rel="noopener">Try the Demo</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: MINT -->
           <article class="project-item" id="proj-mint">
-            <a class="project-thumb" href="#" aria-hidden="true">
+            <a class="project-thumb" href="https://gtr.ukri.org/projects?ref=EP%2FV048082%2F1" target="_blank" rel="noopener">
               <!-- replace ../assets/mint.jpg with your real image -->
               <img src="../assets/mint.jpg" alt="Masonry sample showing DIC speckle pattern (MINT project)">
             </a>
@@ -110,13 +145,13 @@
               </p>
 
               <div class="project-cta">
-                <a href="#" target="_blank" rel="noopener">Project details</a>
+                <a href="https://gtr.ukri.org/projects?ref=EP%2FV048082%2F1" target="_blank" rel="noopener">Project details</a>
                 <a href="#" target="_blank" rel="noopener">Related publication</a>
               </div>
             </div>
           </article>
 
-          <!-- Project 2: High-speed camera OMA -->
+          <!-- Project 3: High-speed camera OMA -->
           <article class="project-item" id="proj-oma">
             <a class="project-thumb" href="#" aria-hidden="true">
               <!-- replace ../assets/oma.jpg with your real image -->
@@ -140,9 +175,9 @@
             </div>
           </article>
 
-          <!-- Project 3: AI at BMW MINI Plant Oxford -->
+          <!-- Project 4: AI at BMW MINI Plant Oxford -->
           <article class="project-item" id="proj-bmw">
-            <a class="project-thumb" href="#" aria-hidden="true">
+            <a class="project-thumb" href="https://www.sdglab.uk/case-study/student-story-miles-judd" target="_blank" rel="noopener">
               <!-- replace ../assets/bmw-mini.jpg with your real image -->
               <img src="../assets/bmw-mini.jpg" alt="BMW MINI Plant Oxford — factory floor">
             </a>
@@ -158,7 +193,7 @@
               </p>
 
               <div class="project-cta">
-                <a href="#" target="_blank" rel="noopener">Learn more</a>
+                <a href="https://www.sdglab.uk/case-study/student-story-miles-judd" target="_blank" rel="noopener">Learn more</a>
               </div>
             </div>
           </article>
