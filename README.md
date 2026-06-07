@@ -1,28 +1,66 @@
-# DPhil candidate in Engineering Science
+# Scientific Machine Learning & AI for Engineering
 
-I am a Doctor of Philosophy (DPhil) candidate in Engineering Science at the University of Oxford, specialising in masonry in-situ testing and material identification (MINT). My research focuses on developing algorithms for material property analysis using vision-based strain data and the Virtual Fields Method (VFM). I am passionate about leveraging technical skills to solve complex engineering problems.
+I am a DPhil candidate in Engineering Science at the University of Oxford working at the intersection of scientific machine learning, engineering simulation, computer vision, and AI for engineering.
 
-[Check out my portfolio]({{ site.baseurl }}/portfolio)
-[Check out my publications]({{ site.baseurl }}/publications)
+My work focuses on building machine learning systems that interact with physical models, simulation workflows, and experimental data. I develop simulation-driven ML pipelines, inverse-problem solvers, physics-informed models, and engineering AI tools that help extract insight from complex engineering systems.
 
-**Technical Skills**: MATLAB, Python, CAD, FEM (DIANA FEA), DIC
+My experience spans a broad range of numerical modelling domains:
 
-### Tic Tac Toe AI Player
-Welcome to my Tic Tac Toe AI Player project! This is a fun and interactive implementation of the classic game, where you can play against AI opponents trained using different machine learning models. The AI players have been trained on a dataset of my previous Tic Tac Toe games, ensuring they mimic my playing style and designed to challenge you at various difficulty levels.
+* **Materials Engineering** – material characterisation, constitutive behaviour, Virtual Fields Method (VFM), Digital Image Correlation (DIC)
+* **Structural & Civil Engineering** – masonry structures, finite element analysis, structural assessment, parameter identification
+* **Dynamics & Vibrations** – operational modal analysis, vibration measurement, dynamic system identification
+* **Electrical & Semiconductor Systems** – simulation-driven machine learning, PINNs, inverse modelling, magnetic-field-based reconstruction
 
-Choose to play against one of three AI models:
-- [**Decision Tree**]({{ site.baseurl }}/tic-tac-toe (DT)): A simple yet effective AI based on decision tree logic. Fast and efficient, but may struggle with complex board states.
-- [**Random Forest**]({{ site.baseurl }}/tic-tac-toe (RF)): A more advanced AI that uses an ensemble of decision trees for better decision-making. More robust and capable of handling a wider variety of board states.
-- **Neural Network**: A highly sophisticated AI trained using deep learning techniques. The most advanced and challenging opponent.
-- [**Support Vector Machine**]({{ site.baseurl }}/tic-tac-toe (SVM)):  A supervised learning method, using a support vector machine to classify optimal moves. While slightly slower to train compared to decision trees, it excels in generalisation and can adapt well to diverse board states.
+I have extensive experience with finite element modelling and engineering simulation workflows using **ANSYS**, **DIANA FEA**, experimental mechanics methods, and simulation-driven machine learning approaches.
 
-**How to Play?** Choose between [Decision Tree]({{ site.baseurl }}/tic-tac-toe (DT)), [Random Forest]({{ site.baseurl }}/tic-tac-toe (RF)), Neural Network, or [Support Vector Machine]({{ site.baseurl }}/tic-tac-toe (SVM)).
-Make Your Move: Click on the board to place your mark (X or O).
-Challenge the AI: See if you can outsmart the AI and win the game!
+My research interests include:
 
-**Why This Project?** This project was created to explore the capabilities of different machine learning models in a simple yet strategic game like Tic Tac Toe. By training the AI on my previous games, I aimed to create opponents that not only play optimally but also reflect my unique playing style. Interested in how it works under the hood? Check out the GitHub repository for the full source code and documentation. If you have any feedback, suggestions, or questions, feel free to reach out to me directly. Enjoy the game, and may the best player win! 🎮
+* Scientific Machine Learning
+* AI Physics Models
+* Engineering Simulation
+* Finite Element Analysis
+* Inverse Problems
+* Surrogate Modelling
+* Engineering Agents & RAG Systems
+* Robust Machine Learning
+* AI-Assisted Engineering Workflows
 
-[Play Tic-Tac-Toe with your friends]({{ site.baseurl }}/TicTacToe) or try to [beat me in Tic-Tac-Toe]({{ site.baseurl }}/tic-tac-toe2) - or more prcisely, a decision tree trained on my previous games!
+[View Portfolio]({{ site.baseurl }}/portfolio)
+
+[View Publications]({{ site.baseurl }}/publications)
+
+**Technical Skills:** Python, PyTorch, ANSYS, DIANA FEA, MATLAB, Digital Image Correlation (DIC), Virtual Fields Method (VFM), Scientific Computing
+
+## 🚀 Featured Project: SimContext
+
+### AI-Ready Engineering Context from Simulation Models
+
+SimContext is an engineering AI tool that converts FEM models into structured engineering knowledge and LLM-ready context.
+
+The system automatically:
+
+* Parses ANSYS APDL and Abaqus input files
+* Extracts engineering metadata and model structure
+* Detects modelling risks and validation concerns
+* Generates engineering review reports
+* Produces compact context blocks for LLMs, agents, and engineering RAG systems
+
+### Why it exists
+
+Engineering simulation models often contain valuable domain knowledge, but understanding an existing model may require manually reading thousands of lines of solver input.
+
+SimContext transforms simulation assets into structured engineering context, helping engineers and AI systems understand legacy models faster.
+
+### Example Applications
+
+* Engineering copilots
+* Simulation RAG systems
+* Legacy model onboarding
+* Surrogate modelling workflows
+* Digital twin pipelines
+* AI-assisted engineering systems
+
+🔗 **Try the Hugging Face Space:** https://huggingface.co/spaces/Milesju/SimContext
 
 ### Projects
 - **MINT: Masonry in-situ testing and material identification:** Funded by the Engineering and Physical Sciences Research Council (EPSRC), the [MINT project](https://testgow.epsrc.ukri.org/NGBOViewGrant.aspx?GrantRef=EP/V048082/1) aims to estimate mechanical properties of existing masonry assets using Digital Image Correlation techniques (DIC) and the Virtual Fields Method (VFM).
